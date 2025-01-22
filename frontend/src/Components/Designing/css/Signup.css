@@ -1,0 +1,172 @@
+/* Basic reset for margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+@REM   box-sizing: border-box;
+}
+@keyframes backgroundAnimation2 {
+  10% { background-color:#002f6c; }
+  50% { background-color: #008080 ; }
+  100% { background-color:#f0f0f0  ; }
+}
+/* Container to hold form and image side by side */
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+   gap: 0; /* Removed gap to ensure smooth transition between sections */
+  padding:0;
+ animation: backgroundAnimation2 10s ease infinite;}
+
+/* Form section */
+.form-section {
+  flex: 1;
+  max-width: 450px;
+  text-align: center;
+  padding:40px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(23, 125, 172, 0.1);
+  border-radius: 8px;
+}
+
+ .h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.welcome {
+  color: #007bff;
+}
+
+.back {
+  color: #333;
+}
+
+.input-group {
+  position: relative;
+@REM   margin-bottom: 15px;
+  
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-group .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background-color:rgb(0, 157, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color:rgb(0, 93, 193);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.login:hover {
+  text-decoration: underline;
+}
+
+/* Image section */
+.image-section {
+@REM   flex: flex-end;
+  display: flex;
+@REM   justify-content: center;
+}
+
+.image-section img {
+  max-width: 105%;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column; /* Stack form and image on top of each other */
+    justify-content: flex-start;
+  }
+
+  .form-section {
+    width: 90%; /* Use more width on mobile */
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+
+  .image-section {
+    width: 100%;
+    margin-top: 20px; /* Add some space between form and image */
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .h1 {
+    font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+
+  .signup-button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 12px;
+  }
+
+  p {
+    font-size: 12px; /* Adjust paragraph font size */
+  }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 10px; /* Add padding for smaller screens */
+  }
+
+  .form-section {
+    padding: 15px;
+  }
+
+  .signup-button {
+    padding: 10px;
+    font-size: 13px; /* Adjust button font size */
+  }
+
+  .h1 {
+    font-size: 1.2rem; /* Further reduce heading size */
+  }
+
+  p {
+    font-size: 10px; /* Further reduce paragraph font size */
+  }
+}

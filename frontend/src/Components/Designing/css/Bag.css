@@ -1,0 +1,304 @@
+
+
+/* Slider Container */
+.slider-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw; /* Default width for larger screens */
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 999;
+  box-shadow: -4px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px 0 0 12px; /* Rounded corners for a graceful look */
+  overflow: hidden;
+}
+
+/* Slider Content */
+.slider-container .slider-content {
+  padding: 30px;
+  overflow-y: auto;
+  height: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add gap between sections */
+}
+
+/* Open/Close Slider */
+.slider-container.open {
+  right: 0;
+}
+
+.slider-container.close {
+  right: -50vw; /* Hide the slider off-screen */
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Cart Item List */
+.list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.list-group-item:hover {
+  transform: translateY(-5px); /* Hover effect for list items */
+}
+
+/* Item Title and Image */
+.list-group-item img {
+  width: 50px;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+/* Quantity and Price Section */
+.list-group-item .d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap between buttons */
+}
+
+.list-group-item .badge {
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 6px 10px; /* Adjusted padding for better spacing */
+}
+
+.list-group-item .badge.bg-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.list-group-item .badge.bg-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.list-group-item .btn-outline-secondary {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.list-group-item .btn-outline-secondary:hover {
+  background-color: #e7e7e7;
+}
+
+/* Price and Quantity Container */
+.price-quantity-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-quantity-container .price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.price-quantity-container .quantity {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap between quantity input and buttons */
+}
+
+.quantity input {
+  width: 40px;
+  padding: 6px;
+  font-size: 1.1rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.quantity button {
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quantity button:hover {
+  background-color: #0056b3;
+}
+
+/* Custom button size */
+.custom-btn-size {
+  padding: 3px 6px !important;  /* Reduce padding further */
+  font-size: 0.75rem !important; /* Smaller font size */
+  line-height: 1.2 !important;  /* Ensure line-height is reduced */
+  min-width: 24px !important;   /* Optional: Set a minimum width for consistent size */
+  height: 24px !important;      /* Optional: Ensure the height is reduced */
+}
+
+/* Override Bootstrap button size if needed */
+.custom-btn-size.btn {
+  padding: 3px 6px !important;  /* Enforce small padding */
+  font-size: 0.75rem !important; /* Enforce small font size */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .slider-container {
+    width: 70vw; /* Increase width on tablets */
+  }
+
+  .slider-container.open {
+    right: 0;
+  }
+
+  .slider-container.close {
+    right: -70vw; /* Adjust the hidden position for tablets */
+  }
+
+  .list-group-item {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .price-quantity-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-quantity-container .price {
+    font-size: 1.3rem;
+  }
+
+  .price-quantity-container .quantity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .list-group-item .badge {
+    font-size: 0.9rem; /* Smaller badge font size for tablets */
+    padding: 5px 8px; /* Adjusted padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+
+  .list-group-item .d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* Reduced gap between buttons */
+}
+
+
+  .slider-container {
+    width: 75vw; /* 3/4 of screen width on mobile */
+  }
+
+  .slider-container.open {
+    right: 0;
+  }
+
+  .slider-container.close {
+    right: -75vw; /* Hide the slider off-screen on mobile */
+  }
+
+  .list-group-item {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .price-quantity-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .price-quantity-container .price {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .price-quantity-container .quantity {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .quantity input {
+    width: 10px; /* Adjust input size for mobile */
+  }
+
+  .list-group-item .badge {
+    font-size: 0.7rem; /* Smaller font size for mobile */
+    padding: 6px 9px; /* Smaller padding for mobile */
+  }
+
+  /* Custom Button Size for Mobile */
+  .custom-btn-size {
+    padding: 2px 4px !important;  /* Further reduced padding for mobile */
+    font-size: 0.6rem !important; /* Even smaller font size */
+  }
+}
+h5 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  position: relative; /* To position the badge relative to this container */
+}
+
+.badge {
+  padding: 10px 15px;
+  transform: translateY(-5px); /* Adjust this value to control the amount of upward shift */
+}
+
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom:20px;
+  padding: 6px;
+  border-top: 1px solid #ccc;
+}
+
+.total-text {
+  @REM font-weight: bold;
+  font-size: 18px;
+}
+
+.total-amount {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+  @REM background-color:#228B22; /* Green background color */
+  background-color:#309730; /* Green background color */
+  padding: 5px 8px; /* Add padding to the box */
+  border-radius: 50px; /* Add rounded corners to the box */
+}
