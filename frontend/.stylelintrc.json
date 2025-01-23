@@ -1,0 +1,9 @@
+{
+    "extends": "stylelint-config-recommended",
+    "rules": {
+      "declaration-property-value-no-unknown": null,
+      "selector-class-pattern": null,
+      "color-function-notation": null
+    }
+  }
+  

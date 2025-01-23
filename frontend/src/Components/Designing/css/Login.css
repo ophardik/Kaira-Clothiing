@@ -3,11 +3,13 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
 }
+
 @keyframes backgroundAnimation {
   10% { background-color:rgb(248, 129, 100); }
   50% { background-color: #feb47b; }
   100% { background-color: #ff7e5f; }
 }
+
 .login-container {
   display: flex;
   align-items: center;
@@ -15,8 +17,6 @@ body {
   height: 100vh;
   gap: 0;
   padding: 0;
-@REM   background: url('https://plus.unsplash.com/premium_photo-1702635214481-aa9b9424f631?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhhcHB5JTIwY291cGxlfGVufDB8fDB8fHww') center center/cover no-repeat;
-@REM   background: linear-gradient(135deg,rgb(249, 115, 38), #f08426); /* Gradient background */
  animation: backgroundAnimation 10s ease infinite;
 }
 
@@ -26,13 +26,13 @@ body {
   text-align: center;
   padding: 40px;
   background-color: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 15%); /* Stronger shadow */
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
 }
 
 .form-section:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 20%); /* Enhance shadow on hover */
 }
 
 h1 {
@@ -77,13 +77,13 @@ input {
   box-sizing: border-box;
   background-color: #f9f9f9;
   transition: box-shadow 0.3s ease;
-  box-shadow: 5px 10px 4px rgba(220, 0, 0, 0.1); /* Drop shadow */
+  box-shadow: 5px 10px 4px rgba(220, 0, 0, 10%); /* Drop shadow */
 }
 
 input:focus {
   border-color: orange;
   background-color: #fff;
-  box-shadow: 4px 6px 12px rgba(171, 36, 36, 0.81);
+  box-shadow: 4px 6px 12px rgba(171, 36, 36, 81%);
 }
 
 .icon {
@@ -106,12 +106,12 @@ input:focus {
   font-size: 16px;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 10%);
 }
 
 .login-button:hover {
   background-color: darkorange;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 15%);
   transform: scale(1.05); /* Enlarge on hover */
 }
 
@@ -135,12 +135,13 @@ input:focus {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .login-container {
     flex-direction:column;
     justify-content: center;
     align-items: center;
   }
+
   @keyframes backgroundAnimation {
   10% { background-color:rgb(241, 56, 10); }
   50% { background-color:rgb(216, 111, 30); }
@@ -172,7 +173,6 @@ input:focus {
   .image-section img {
     width: 100%;
     height: auto;
-    @REM margin-top: 20px;
   }
 
   p {
@@ -180,7 +180,7 @@ input:focus {
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   h1 {
     font-size: 24px;
   }

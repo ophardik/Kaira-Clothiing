@@ -1,163 +1,3 @@
-@REM /* Image Slider Container */
-@REM .image-slider {
-@REM   display: flex;
-@REM   overflow-x: auto; /* Enable horizontal scrolling */
-@REM   scroll-snap-type: x mandatory;
-@REM   gap: 1rem;
-@REM   padding: 1rem;
-@REM   background-color:rgb(24, 23, 23);
-@REM }
-
-@REM /* Individual Slide Styling */
-@REM .slide {
-@REM   flex: 0 0 auto; /* Prevent flex shrink and ensure consistent slide width */
-@REM   width: 300px; /* Set a fixed width for each slide */
-@REM   scroll-snap-align: start; /* Ensure each slide snaps into position */
-@REM   text-align: center;
-@REM   background:white;
-@REM   border-radius: 39px;
-@REM   box-shadow: 0px 4px 6px rgba(8, 8, 8, 0.1);
-@REM   padding: 1rem;
-@REM }
-
-@REM /* Slide Image Styling */
-@REM .slide-image {
-@REM   width: 100%;
-@REM   height: auto;
-@REM   border-radius: 30px;
-@REM }
-
-@REM /* Slide Detail Text */
-@REM .slide-detail {
-@REM   margin-top: 0.5rem;
-@REM   font-size: 1rem;
-@REM   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-@REM   color: black;
-@REM }
-
-@REM /* Add Smooth Scrolling */
-@REM .image-slider {
-@REM   scroll-behavior: smooth;
-@REM }
-
-
-@REM .image-slider .slide .btn {
-@REM   background-color:#111111; /* Tailwind's bg-blue-500 */
-@REM   color: white;
-@REM   padding: 0.5rem 1.5rem; /* Tailwind's px-6 py-2 */
-@REM   border-radius:1.75rem; /* Tailwind's rounded-lg */
-@REM   text-align: center;
-@REM   text-decoration: none;
-@REM   font-weight: bold;
-@REM   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-@REM }
-@REM .image-slider .slide .btn:hover {
-@REM   background-color: #2563eb; /* Tailwind's bg-blue-600 */
-@REM   transform: scale(1.05); /* Slightly enlarges the button on hover */
-@REM }
-
-@REM .image-slider .slide .btn:focus {
-@REM   outline: none;
-@REM   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Light blue focus ring */
-@REM }
-@REM /* Responsive Design */
-@REM @media (max-width: 768px) {
-@REM   .slide {
-@REM     width: 90%; /* Adjust slide width for smaller screens */
-@REM   }
-@REM }
-
-
-@REM /* General Reset */
-@REM * {
-@REM   margin: 0;
-@REM   padding: 0;
-@REM   box-sizing: border-box;
-@REM }
-
-@REM body {
-@REM   font-family: 'Arial', sans-serif;
-@REM   background-color: #f8f8f8;
-@REM   color: #333;
-@REM }
-
-@REM /* Product List Container */
-@REM .product-list {
-@REM   display: flex;
-@REM   flex-wrap: wrap;
-@REM   justify-content: center;
-@REM   gap: 20px;
-@REM   padding: 20px;
-@REM }
-
-@REM /* Product Card */
-@REM .product-card {
-@REM   background-color: #fff;
-@REM   border-radius: 10px;
-@REM   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-@REM   overflow: hidden;
-@REM   width: 280px;
-@REM   transition: transform 0.3s ease, box-shadow 0.3s ease;
-@REM }
-
-@REM .product-card:hover {
-@REM   transform: translateY(-5px);
-@REM   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-@REM }
-
-@REM /* Image Container */
-@REM .image-container {
-@REM   display: block;
-@REM   position: relative;
-@REM   overflow: hidden;
-@REM }
-
-@REM .product-image {
-@REM   width: 100%;
-@REM   height: auto;
-@REM   transition: transform 0.5s ease;
-@REM }
-
-@REM .image-container:hover .product-image {
-@REM   transform: scale(1.1);
-@REM }
-
-@REM /* Product Info */
-@REM .product-info {
-@REM   padding: 15px;
-@REM   text-align: center;
-@REM }
-
-@REM .product-description {
-@REM   font-size: 16px;
-@REM   font-weight: bold;
-@REM   color: #555;
-@REM   margin-bottom: 10px;
-@REM }
-
-@REM .product-category {
-@REM   font-size: 14px;
-@REM   color: #888;
-@REM   margin-bottom: 15px;
-@REM }
-
-@REM /* Button */
-@REM .btn-primary {
-@REM   display: inline-block;
-@REM   text-decoration: none;
-@REM   background-color: rgb(12, 12, 12);
-@REM   color: #fff;
-@REM   padding: 10px 20px;
-@REM   border-radius: 40px;
-@REM   font-weight: bold;
-@REM   transition: background-color 0.3s ease;
-@REM }
-
-@REM .btn-primary:hover {
-@REM   background-color:rgba(77, 77, 67, 0.53);
-@REM }
-
-
 /* Image Slider Container */
 .image-slider {
   display: flex;
@@ -176,7 +16,7 @@
   text-align: center;
   background: white;
   border-radius: 39px;
-  box-shadow: 0px 4px 6px rgba(8, 8, 8, 0.1);
+  box-shadow: 0 4px 6px rgba(8, 8, 8, 10%);
   padding: 1rem;
 }
 
@@ -195,14 +35,9 @@
   color: black;
 }
 
-/* Add Smooth Scrolling */
-.image-slider {
-  scroll-behavior: smooth;
-}
-
 /* Button Styling */
 .image-slider .slide .btn {
-  background-color: #111111;
+  background-color: #111;
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 1.75rem;
@@ -219,11 +54,11 @@
 
 .image-slider .slide .btn:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 50%);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .slide {
     width: 90%;
   }
@@ -237,7 +72,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f8f8f8;
   color: #333;
 }
@@ -255,7 +90,7 @@ body {
 .product-card {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 10%);
   overflow: hidden;
   width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -263,7 +98,7 @@ body {
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 20%);
 }
 
 /* Image Container */
@@ -315,5 +150,5 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: rgba(77, 77, 67, 0.53);
+  background-color: rgba(77, 77, 67, 53%);
 }

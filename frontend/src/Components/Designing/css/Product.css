@@ -15,7 +15,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 10%);
   max-width: 100%;
 }
 
@@ -55,13 +55,12 @@
   padding: 10px;
 }
 
-.color-samples {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+
 
 .color-sample {
+    display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   width: 40px;
   height: 40px;
   border: 2px solid #ddd;
@@ -74,7 +73,7 @@
   border-color: #000;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .product-details {
     flex-direction: column;
   }
@@ -103,7 +102,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .product-info h3 {
     font-size: 16px;
   }
@@ -117,6 +116,7 @@
     height: 30px;
   }
 }
+
 /* Default styles for larger screens */
 .product-details {
   display: flex;
@@ -126,7 +126,7 @@
 }
 
 /* For Mobile */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .product-details {
     flex-direction: column;
   }
@@ -196,6 +196,7 @@
 .add-to-bag:hover {
   background-color:rgb(123, 129, 134);
 }
+
 .add-to-bag-sidebar {
   position: fixed; /* Ensures it doesn't affect the flow of other content */
   top: 0;
@@ -203,17 +204,18 @@
   width: 300px; /* Adjust width as needed */
   height: 100%;
   background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 10%);
   z-index: 1000; /* Ensure it appears above other elements */
   overflow-y: auto; /* Allows scrolling if content exceeds viewport height */
 }
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 50%);
   z-index: 999; /* Below the sidebar */
 }
 

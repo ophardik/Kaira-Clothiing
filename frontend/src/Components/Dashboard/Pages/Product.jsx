@@ -181,7 +181,7 @@ const Product = () => {
           }}
         >
           <div className="image-holder">
-            <a href="index.html">
+            <Link to="/women">
               <img
                 src={Cat2}
                 alt="categories"
@@ -192,7 +192,7 @@ const Product = () => {
                   margin: "0 auto",
                 }}
               />
-            </a>
+            </Link>
           </div>
           <div className="category-content">
             <div className="product-button">

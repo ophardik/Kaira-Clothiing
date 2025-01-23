@@ -7,7 +7,7 @@
 /* Image Styles */
 .relative {
   position: relative;
-  overflow: hidden; /* Hide overflowing parts of the image */
+  overflow: hidden; 
 }
 
 .relative img {

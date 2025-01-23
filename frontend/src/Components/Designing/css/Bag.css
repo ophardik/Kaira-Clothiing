@@ -7,9 +7,9 @@
   right: 0;
   width: 50vw; /* Default width for larger screens */
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #fff;
   z-index: 999;
-  box-shadow: -4px 0px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 10%);
   transition: all 0.3s ease-in-out;
   border-radius: 12px 0 0 12px; /* Rounded corners for a graceful look */
   overflow: hidden;
@@ -54,8 +54,8 @@
   align-items: center;
   padding: 15px;
   margin-bottom: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 10%);
   border-radius: 8px;
   transition: transform 0.2s;
 }
@@ -76,6 +76,10 @@
   display: flex;
   align-items: center;
   gap: 8px; /* Reduced gap between buttons */
+}
+.badge {
+  padding: 10px 15px;
+  transform: translateY(-5px); /* Adjust this value to control the amount of upward shift */
 }
 
 .list-group-item .badge {
@@ -165,7 +169,7 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .slider-container {
     width: 70vw; /* Increase width on tablets */
   }
@@ -204,8 +208,7 @@
   }
 }
 
-@media (max-width: 480px) {
-
+@media (width <= 480px) {
   .list-group-item .d-flex.align-items-center {
   display: flex;
   align-items: center;
@@ -261,6 +264,7 @@
     font-size: 0.6rem !important; /* Even smaller font size */
   }
 }
+
 h5 {
   display: inline-block;
   margin-right: 10px;
@@ -272,10 +276,7 @@ h5 {
   position: relative; /* To position the badge relative to this container */
 }
 
-.badge {
-  padding: 10px 15px;
-  transform: translateY(-5px); /* Adjust this value to control the amount of upward shift */
-}
+
 
 
 .total-container {
@@ -289,7 +290,7 @@ h5 {
 }
 
 .total-text {
-  @REM font-weight: bold;
+
   font-size: 18px;
 }
 
@@ -297,7 +298,8 @@ h5 {
   font-weight: bold;
   font-size: 15px;
   color: #333;
-  @REM background-color:#228B22; /* Green background color */
+
+
   background-color:#309730; /* Green background color */
   padding: 5px 8px; /* Add padding to the box */
   border-radius: 50px; /* Add rounded corners to the box */
