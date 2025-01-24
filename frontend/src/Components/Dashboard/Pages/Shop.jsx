@@ -181,7 +181,7 @@ const Shop = () => {
           }}
         >
           <div className="image-holder">
-            <a href="index.html">
+            <Link to="/women">
               <img
                 src={Cat2}
                 alt="categories"
@@ -192,7 +192,7 @@ const Shop = () => {
                   margin: "0 auto",
                 }}
               />
-            </a>
+            </Link>
           </div>
           <div className="category-content">
             <div className="product-button">
@@ -268,9 +268,9 @@ const Shop = () => {
                         <h5 className="widget-title text-uppercase mb-4">Quick Links</h5>
                         <ul className="menu-list list-unstyled text-uppercase border-animation-left fs-6">
                           <li className="menu-item">
-                            <a href="index.html" className="item-anchor">
+                            <Link to="/" className="item-anchor">
                               Home
-                            </a>
+                            </Link>
                           </li>
                           <li className="menu-item">
                             <Link to="/about" className="item-anchor">

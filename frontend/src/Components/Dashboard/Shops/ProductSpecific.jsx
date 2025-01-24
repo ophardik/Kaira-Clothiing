@@ -23,6 +23,7 @@ const ProductSpecific = () => {
  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
  const { productId } = useParams();
  const userId=sessionStorage.getItem("userId")
+ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
 
 
 const handleAddToBag = async () => {
@@ -54,7 +55,7 @@ const handleAddToBag = async () => {
   };
 
   try {
-    const response = await axios.post("/cart/addToCart", data);
+    const response = await axios.post(`${BASE_URL}/cart/addToCart`, data);
 
     const updatedCart = [...cartItems, { ...data, productId: { _id: product._id } }];
     setCartItems(updatedCart);
@@ -87,7 +88,7 @@ const handleAddToBag = async () => {
  console.log(productId,"productId")
     const fetchingProduct= async()=>{
         try {     
-          const response = await axios.get(`/product/singleProduct?productId=${productId}`);
+          const response = await axios.get(`${BASE_URL}/product/singleProduct?productId=${productId}`);
           setProduct(response.data.data)
         } catch (error) {
           console.log("Error in fetching product",error)

@@ -14,11 +14,12 @@ import { FaShoppingCart } from 'react-icons/fa';
 const DetailProduct = () => {
     const [products, setProducts] = useState([]);
     const { variety, gender } = useParams();
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
     console.log(variety, "variety")
     console.log(gender, "gender")
     const displayProduct = async () => {
         try {
-            const response = await axios.get("/product/allProduct");
+            const response = await axios.get(`${BASE_URL}/product/allProduct`);
             const items = response.data.data
             const varietySpecific = items.filter((product) => product.variety === variety)
             console.log(varietySpecific, "varietySpecific")

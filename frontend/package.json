@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://kaira-7hu1.onrender.com",
+  "proxy": "https://kaira-clothiing-fash.onrender.com",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@mui/icons-material": "^6.1.9",

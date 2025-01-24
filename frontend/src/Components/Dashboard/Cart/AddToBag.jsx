@@ -18,6 +18,7 @@ const AddToBag = () => {
   const [total, setTotal] = useState(0); // New state for total amount
   const [isLoading, setIsLoading] = useState(false);
   const userId = sessionStorage.getItem('userId');
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
   console.log("cart", cart);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const AddToBag = () => {
         }
 
         const data = { userId };
-        const response = await axios.post('/cart/cartList', data);
+        const response = await axios.post(`${BASE_URL}/cart/cartList`, data);
 
         if (response.data.success && Array.isArray(response.data.data)) {
           const products = response.data.data.map((item) => ({
@@ -85,7 +86,7 @@ const AddToBag = () => {
       // Avoid sending invalid quantities
       if (newQuantity < 0) return;
 
-      const response = await axios.post("/cart/updateCartItem", {
+      const response = await axios.post(`${BASE_URL}/cart/updateCartItem`, {
         userId,
         productId: currentItem.productId,
         quantity: newQuantity,
@@ -115,7 +116,7 @@ const AddToBag = () => {
       const totalAmount = calculateTotalAmount(cart); // Calculate total price
       try {
         setIsLoading(true);
-        const response = await fetch('/payment/processing', {
+        const response = await fetch(`${BASE_URL}/payment/processing`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -150,7 +151,7 @@ const AddToBag = () => {
 
     if (paymentId) {
         try {
-            const response = await fetch('/payment/success', {
+            const response = await fetch(`${BASE_URL}/payment/success`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

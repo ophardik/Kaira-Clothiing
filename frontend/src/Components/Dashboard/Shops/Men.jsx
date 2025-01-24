@@ -17,6 +17,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { FaShoppingCart } from 'react-icons/fa'
 const Men = () => {
  const [products,setProducts]=useState([])
+ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
  useEffect(() => {
   // Scroll to the top when the component mounts
   window.scrollTo(0, 0);
@@ -24,7 +25,7 @@ const Men = () => {
 
   const displayProduct=async()=>{
     try {
-      const response=await axios.get("/product/allProduct");
+      const response=await axios.get(`${BASE_URL}/product/allProduct`);
       const items=response.data.data
       if (!Array.isArray(items)) {
         console.error("Expected an array but got:", items);

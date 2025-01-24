@@ -10,11 +10,11 @@ const Signup = () => {
   const [password,setPassword]=useState("");
   const [email,setEmail]=useState("")
   const navigate=useNavigate()
-
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
   const handleSubmit=async(e)=>{
     try {
       e.preventDefault();
-      const response=await axios.post("/api/signup",{
+      const response=await axios.post(`${BASE_URL}/api/signup`,{
         userName,
         password,
         email

@@ -8,11 +8,12 @@ const Login = () => {
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
   const navigate=useNavigate()
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
 
   const handleSubmit=async(e)=>{
     try {
       e.preventDefault()
-      const response=await axios.post("/api/login",{
+      const response=await axios.post(`${BASE_URL}/api/login`,{
         email:email,
         password:password
       })
