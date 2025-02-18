@@ -17,6 +17,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { FaShoppingCart } from 'react-icons/fa'
 const Men = () => {
  const [products,setProducts]=useState([])
+ const [loading,setLoading]=useState(true)
  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
  useEffect(() => {
   // Scroll to the top when the component mounts
@@ -44,8 +45,11 @@ const Men = () => {
         }
       })
       setProducts(uniqueVariety)
+      setLoading(false)
+
     } catch (error) {
       console.log(error,"error in displaying product")
+      setLoading(false)
     }
   }
   useEffect(()=>{
@@ -97,6 +101,12 @@ const Men = () => {
             </div>
           </div>
         </nav>
+        {loading && (
+  <div className="spinner">
+    <div className="lds-dual-ring"></div>
+  </div>
+)}
+
         <div className="image-slider">
 <Swiper
   modules={[Navigation, Pagination]}

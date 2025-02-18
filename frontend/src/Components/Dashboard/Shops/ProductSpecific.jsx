@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import '../../Designing/css/Product.css'
 import Arct from '../../Designing/images/arct-icon.png'
 import MainLogo from '../../Designing/images/main-logo.png'
@@ -21,6 +21,8 @@ const ProductSpecific = () => {
  const [cartItems,setCartItems]=useState([])
  const [size,setSize]=useState("")
  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+ const navigate=useNavigate()
+ const [loading,setLoading]=useState(true)
  const { productId } = useParams();
  const userId=sessionStorage.getItem("userId")
  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
@@ -29,6 +31,14 @@ const ProductSpecific = () => {
 const handleAddToBag = async () => {
   if (!userId) {
     toast.error("Please login to add product to cart");
+    setTimeout(() => {
+      toast.info("Redirecting...");
+      
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000); // Wait for 2 seconds before redirecting
+      
+    }, 2000); // 
     return;
   }
 
@@ -43,6 +53,7 @@ const handleAddToBag = async () => {
         : item
     );
     setCartItems(updatedItem);
+    setLoading(false)
     // toast.success("Product quantity updated in the cart");
     return;
   }
@@ -62,9 +73,11 @@ const handleAddToBag = async () => {
     console.log("Updated Cart:", updatedCart);
 
     setIsSidebarVisible(true);
+    setLoading(false)
     // toast.success("Product added to the cart");
   } catch (error) {
     console.error("Error adding item to cart:", error);
+    setLoading(false)
     toast.error("Something went wrong while adding the product to the cart");
   }
 };
@@ -90,8 +103,10 @@ const handleAddToBag = async () => {
         try {     
           const response = await axios.get(`${BASE_URL}/product/singleProduct?productId=${productId}`);
           setProduct(response.data.data)
+          setLoading(false)
         } catch (error) {
           console.log("Error in fetching product",error)
+          setLoading(false)
         }
       }
     useEffect(()=>{
@@ -142,6 +157,11 @@ const handleAddToBag = async () => {
           </div>
         </nav>
        
+        {loading && (
+  <div className="spinner">
+    <div className="lds-dual-ring"></div>
+  </div>
+)}
 
         <div className="product-details">
   <div className="image-container">

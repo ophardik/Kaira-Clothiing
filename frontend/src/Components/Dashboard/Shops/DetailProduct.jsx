@@ -13,6 +13,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 const DetailProduct = () => {
     const [products, setProducts] = useState([]);
+    const [loading,setLoading]=useState(true)
     const { variety, gender } = useParams();
     const BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://kaira-clothiing-fash.onrender.com";
     console.log(variety, "variety")
@@ -24,9 +25,11 @@ const DetailProduct = () => {
             const varietySpecific = items.filter((product) => product.variety === variety)
             console.log(varietySpecific, "varietySpecific")
             const filteredProducts = varietySpecific.filter((product) => product.category.toLowerCase() === gender.toLowerCase());
+            setLoading(false)
             setProducts(filteredProducts);
         } catch (error) {
             console.log("error in displaying product", error)
+            setLoading(false)
         }
     }
     useEffect(() => {
@@ -75,6 +78,12 @@ const DetailProduct = () => {
                     </div>
                 </div>
             </nav>
+            {loading && (
+  <div className="spinner">
+    <div className="lds-dual-ring"></div>
+  </div>
+)}
+
             <div className="image-slider">
                 <Swiper
                     modules={[Navigation, Pagination]}

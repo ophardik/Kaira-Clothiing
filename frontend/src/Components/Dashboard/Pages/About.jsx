@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../Designing/css/About.css'
 import Arct from '../../Designing/images/arct-icon.png'
@@ -11,6 +11,10 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 
 const About = () => {
+  const [loading,setLoading]=useState(true)
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <div>
        <nav className="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
@@ -54,7 +58,11 @@ const About = () => {
     </div>
   </div>
 </nav>
-
+{loading && (
+  <div className="spinner">
+    <div className="lds-dual-ring"></div>
+  </div>
+)}
 <div className="container mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Image */}
