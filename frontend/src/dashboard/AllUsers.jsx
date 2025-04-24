@@ -3,11 +3,12 @@ import axios from "axios";
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
+  const BASE_URL=process.env.REACT_APP_BACKEND_URL||"https://kaira-clothiing-backend-working.onrender.com/"
 
   // Fetch users from API
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8008/admin/allUsers");
+      const response = await axios.get(`${BASE_URL}/admin/allUsers`);
       console.log(response);
       setUsers(response.data.data); // Make sure the response shape matches
     } catch (error) {
@@ -22,7 +23,7 @@ const AllUsers = () => {
       if (!confirmDelete) return;
       const response = await axios({
         method: "delete",
-        url: "http://localhost:8008/admin/deleteUser",
+        url: `${BASE_URL}/admin/deleteUser`,
         data: { id }, // sending user ID now
       });
 

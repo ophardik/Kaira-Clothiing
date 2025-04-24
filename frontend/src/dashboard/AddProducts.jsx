@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const AddProducts = () => {
+  const BASE_URL=process.env.REACT_APP_BACKEND_URL||"https://kaira-clothiing-backend-working.onrender.com/"
   // Initialize state for all form fields
   const [productData, setProductData] = useState({
     title: '',
@@ -40,7 +41,7 @@ const AddProducts = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8008/admin/addProduct', productData);
+      const response = await axios.post(`${BASE_URL}/admin/addProduct`, productData);
       if (response.data.success) {
         alert(response.data.message); // Show success message
         // Reset the form

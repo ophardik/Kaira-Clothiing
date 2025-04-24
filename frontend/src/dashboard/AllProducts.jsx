@@ -3,11 +3,11 @@ import axios from "axios";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-
+  const BASE_URL=process.env.REACT_APP_BACKEND_URL||"https://kaira-clothiing-backend-working.onrender.com/"
   // Fetch all products from API
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8008/admin/productList");
+      const response = await axios.get(`${BASE_URL}/admin/productList`);
       setProducts(response.data.data || []);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -18,7 +18,7 @@ const AllProducts = () => {
       const confirmDelete = window.confirm("Are you sure you want to delete this product?");
       if (!confirmDelete) return;
   
-      const response = await axios.delete("http://localhost:8008/admin/deleteProduct", {
+      const response = await axios.delete(`${BASE_URL}/admin/deleteProduct`, {
         data: { _id }
       });
   
