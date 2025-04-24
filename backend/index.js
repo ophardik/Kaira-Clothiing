@@ -6,6 +6,7 @@ const userRoute=require("./Routes/userRoute")
 const productRoute=require("./Routes/productRoute")
 const cartRoute=require("./Routes/cartRoute")
 const paymentRoute=require("./Routes/paymentRoute")
+const adminRoute=require("./Routes/adminRoute")
 const app=express();
 const PORT=8008;
 
@@ -18,6 +19,7 @@ app.use("/api",userRoute)
 app.use("/product",productRoute)
 app.use("/cart",cartRoute)
 app.use("/payment",paymentRoute)
+app.use("/admin",adminRoute)
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`)

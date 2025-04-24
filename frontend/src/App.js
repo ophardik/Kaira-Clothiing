@@ -19,6 +19,12 @@ import Signup from './Components/Authentication/Signup.jsx';
 import AddToBag from './Components/Dashboard/Cart/AddToBag.jsx';
 import Success from './Components/Payment/Success.jsx';
 import Failure from './Components/Payment/Failure.jsx';
+import Dashboard from './dashboard/Dashboard.jsx';
+import AllUsers from './dashboard/AllUsers.jsx';
+import AllProducts from './dashboard/AllProducts.jsx';
+import AddProducts from './dashboard/AddProducts.jsx';
+import AdminProtectedRoute from './dashboard/ProtectedRoute.jsx';
+import AdminLogin from './dashboard/Login.jsx';
 
 
 function App() {
@@ -39,6 +45,14 @@ function App() {
       <Route path="/cart" element={<AddToBag />} />
       <Route path="/success" element={<Success />} />
       <Route path="/failure" element={<Failure />} />
+      <Route path="/admin/dashboard" element={
+  <AdminProtectedRoute>
+    <Dashboard />
+  </AdminProtectedRoute>
+} />      <Route path="/admin/usersList" element={<AllUsers />} />
+      <Route path="/admin/allProducts" element={<AllProducts />} />
+      <Route path="/admin/addProducts" element={<AddProducts />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
 
     </Routes>
     </BrowserRouter>

@@ -21,17 +21,16 @@
     "react-scripts": "^5.0.1",
     "react-toast": "^1.0.3",
     "react-toastify": "^11.0.2",
+    "recharts": "^2.15.3",
     "swiper": "^11.1.15",
     "web-vitals": "^2.1.4"
   },
-
   "scripts": {
-  "start": "craco start",
-  "build": "craco build",
-  "test": "craco test",
-  "eject": "react-scripts eject"
-},
-
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
